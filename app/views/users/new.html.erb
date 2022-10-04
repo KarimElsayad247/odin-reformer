@@ -1,3 +1,12 @@
+<style>
+  label {
+      display: block;
+  }
+
+  li {
+      list-style: none;
+  }
+</style>
 <h1>New User</h1>
 
 <%= form_with model: @user do |form| %>
@@ -13,6 +22,18 @@
     <%= form.label :password %>
     <%= form.password_field :password %>
   </li>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <%= form.submit "Sign up!" %>
 <% end %>
