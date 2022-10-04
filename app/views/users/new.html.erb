@@ -1,21 +1,44 @@
 <h1>New User</h1>
 
-<form action="/users" method="post" accept-charset="UTF-8">
+<%= form_tag '/users' do %>
   <ul>
     <li>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="user[username]" />
+      <%= label_tag 'username' %>
+      <%= text_field_tag 'username' %>
     </li>
-
+    
     <li>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="user[email]" />
+      <%= label_tag 'email' %>
+      <%= email_field_tag 'email' %>
     </li>
-
+    
     <li>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="user[password]" />
+      <%= label_tag 'password' %>
+      <%= password_field_tag 'password' %>
     </li>
   </ul>
-  <button type="submit">Create new user</button>
-</form>
+
+  <%= submit_tag "Sign up" %>
+<% end %>
+
+
+
+<!--<form action="/users" method="post" accept-charset="UTF-8">-->
+<!--  <ul>-->
+<!--    <li>-->
+<!--      <label for="username">Username</label>-->
+<!--      <input type="text" id="username" name="user[username]" />-->
+<!--    </li>-->
+
+<!--    <li>-->
+<!--      <label for="email">Email</label>-->
+<!--      <input type="email" id="email" name="user[email]" />-->
+<!--    </li>-->
+
+<!--    <li>-->
+<!--      <label for="password">Password</label>-->
+<!--      <input type="password" id="password" name="user[password]" />-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  <button type="submit">Create new user</button>-->
+<!--</form>-->
