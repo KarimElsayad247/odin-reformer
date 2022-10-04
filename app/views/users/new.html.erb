@@ -1,1 +1,21 @@
 <h1>New User</h1>
+
+<form action="/users" method="post" accept-charset="UTF-8">
+  <ul>
+    <li>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" />
+    </li>
+
+    <li>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" />
+    </li>
+
+    <li>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" />
+    </li>
+  </ul>
+  <button type="submit">Create new user</button>
+</form>
