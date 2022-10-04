@@ -1,27 +1,46 @@
 <h1>New User</h1>
 
-<%= form_tag '/users' do %>
-  <ul>
-    <li>
-      <%= label_tag 'username' %>
-      <%= text_field_tag 'username' %>
-    </li>
-    
-    <li>
-      <%= label_tag 'email' %>
-      <%= email_field_tag 'email' %>
-    </li>
-    
-    <li>
-      <%= label_tag 'password' %>
-      <%= password_field_tag 'password' %>
-    </li>
-  </ul>
+<%= form_with model: @user do |form| %>
+  <li>
+    <%= form.label :username %>
+    <%= form.text_field :username%>
+  </li>
+  <li>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </li>
+  <li>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </li>
 
-  <%= submit_tag "Sign up" %>
+  <%= form.submit "Sign up!" %>
 <% end %>
 
 
+
+
+
+<%#= form_tag '/users' do %>
+<!--  <ul>-->
+<!--    <li>-->
+      <%#= label_tag 'username' %>
+      <%#= text_field_tag 'username' %>
+<!--    </li>-->
+    
+<!--    <li>-->
+      <%#= label_tag 'email' %>
+      <%#= email_field_tag 'email' %>
+<!--    </li>-->
+    
+<!--    <li>-->
+      <%#= label_tag 'password' %>
+      <%#= password_field_tag 'password' %>
+<!--    </li>-->
+<!--  </ul>-->
+
+  <%#= submit_tag "Sign up" %>
+<%# end %>
 
 <!--<form action="/users" method="post" accept-charset="UTF-8">-->
 <!--  <ul>-->
