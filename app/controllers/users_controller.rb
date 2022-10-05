@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to new_user_path
     else
-      pp @user.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,8 +22,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
+  def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params) # Absolutely no password validation I know
+      flash[:notice] = "User updated!"
+      redirect_to users_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
 private
